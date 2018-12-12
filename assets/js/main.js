@@ -9,29 +9,33 @@ var urls = {
 };
 
 
-$(document).ready(function () {
 
-    var settings = {
-        'cache': false,
-        'dataType': "jsonp",
-        "async": true,
-        "crossDomain": true,
-        "url": urls.test,
-        "method": "GET",
-        "headers": {
-           "Accept": "text/plain; charset=utf-8",
-            "Content-Type": "text/plain; charset=utf-8",
-            "Access-Control-Allow-Origin":"*",
-            "Authorization": token
-        }
+// var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.MQ.bYceSpllpyYQixgNzDt7dpCkEojdv3NKD-85XLXfdI4";
+var xhr = new XMLHttpRequest();
+var url = "https://tonyspizzafactory.herokuapp.com/api/pizzas";
+xhr.open("GET", url, true);
+
+xhr.onreadystatechange= function() {
+    if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+        var json = JSON.parse(xhr.responseText);
+        DATAHTML(json);
+    }
+};
+
+xhr.setRequestHeader('Authorization', token);
+xhr.send(null);
+
+function DATAHTML(data) {
+    var resultat = "";
+
+    for (var i = 0; i < data.length; i++) {
+        console.log(data[i]);
+        resultat += "<p>" + data[i].name + "</p>";
     }
 
-    $.ajax(settings).done(function (response) {
-        console.log(response);
+}
 
-    });
 
-});
 /*
 
 
@@ -98,5 +102,4 @@ Http.onreadystatechange = function(){
         console.log("error: " + Http.error.message);
     }
 }
-
 */
