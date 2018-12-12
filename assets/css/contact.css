@@ -7,7 +7,8 @@
 
 form.contact-form {
     margin: 25px 0 ;
-}
+    overflow: auto;
+ }
 
 
 legend {
@@ -59,14 +60,22 @@ input[type="radio"] {
     width: 20px;
 }
 
+.field-wrap {
+    width: 100%;
+    position: relative;
+    height: 50px;
+    margin: 0 0 25px 0;
+}
+
 .input-wrap {
     float: right;
     width: 59%;
 }
 
 .input-wrap p {
-    margin: 5px 0 0 0;
+    margin: 5px 0 15px 0;
 }
+
 input[type="text"], textarea {
     border: 1px solid #000000;
     font-size: 1.4rem;
