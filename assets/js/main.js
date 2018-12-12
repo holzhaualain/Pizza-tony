@@ -1,5 +1,5 @@
 
-var Http = new XMLHttpRequest();
+var xhr = new XMLHttpRequest();
 
 var token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.MQ.bYceSpllpyYQixgNzDt7dpCkEojdv3NKD-85XLXfdI4';
 
@@ -8,32 +8,6 @@ var urls = {
     "pizzas": 'https://tonyspizzafactory.herokuapp.com/api/pizzas'
 };
 
-
-
-// var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.MQ.bYceSpllpyYQixgNzDt7dpCkEojdv3NKD-85XLXfdI4";
-var xhr = new XMLHttpRequest();
-var url = "https://tonyspizzafactory.herokuapp.com/api/pizzas";
-xhr.open("GET", url, true);
-
-xhr.onreadystatechange= function() {
-    if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-        var json = JSON.parse(xhr.responseText);
-        DATAHTML(json);
-    }
-};
-
-xhr.setRequestHeader('Authorization', token);
-xhr.send(null);
-
-function DATAHTML(data) {
-    var resultat = "";
-
-    for (var i = 0; i < data.length; i++) {
-        console.log(data[i]);
-        resultat += "<p>" + data[i].name + "</p>";
-    }
-
-}
 
 
 /*
@@ -85,21 +59,49 @@ fetch(urls.pizzas, {
 
 console.log(urls.pizzas);
 
-Http.open("GET", urls.pizzas, true);
 
-Http.setRequestHeader('Content-Type', 'application/JSON');
-Http.setRequestHeader("Authorization", "Basic " + token);
-Http.withCredentials = true;
+// var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.MQ.bYceSpllpyYQixgNzDt7dpCkEojdv3NKD-85XLXfdI4";
+var xhr = new XMLHttpRequest();
+var url = "https://tonyspizzafactory.herokuapp.com/api/pizzas";
+xhr.open("GET", url, true);
+
+xhr.onreadystatechange= function() {
+    if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+        var json = JSON.parse(xhr.responseText);
+        DATAHTML(json);
+    }
+};
+
+xhr.setRequestHeader('Authorization', token);
+xhr.send(null);
+
+function DATAHTML(data) {
+    var resultat = "";
+
+    for (var i = 0; i < data.length; i++) {
+        console.log(data[i]);
+        resultat += "<p>" + data[i].name + "</p>";
+    }
+
+}
 
 
-Http.send();
 
-Http.onreadystatechange = function(){
-    if(this.readyState === 4 && this.status === 200) {
-        console.log(Http.responseText);
+*/
+xhr.open("GET", urls.pizzas, true);
+
+xhr.setRequestHeader('Content-Type', 'application/JSON');
+xhr.setRequestHeader("Authorization", token);
+
+xhr.send(null);
+
+xhr.onreadystatechange = function(){
+
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+        var json = JSON.parse(xhr.responseText);
+        console.log(json);
     }
     else {
-        console.log("error: " + Http.error.message);
-    }
+     }
 }
-*/
+
