@@ -1,0 +1,111 @@
+
+/*
+////////////////////////////////////////////////////////////////////////////
+	contact form
+//////////////////////////////////////////////////////////////////////////////
+*/
+
+form.contact-form {
+    margin: 25px 0 ;
+}
+
+
+legend {
+    display: inline-block;
+    float: left;
+    font-size: 1.6rem;
+    width: 40%;
+}
+
+label {
+    display: inline-block;
+    float: left;
+    font-size: 1.6rem;
+    padding: 10px 0 0 0;
+}
+
+fieldset {
+    padding: 0;
+}
+
+fieldset.outer-fieldset {
+    width: 100%;
+    margin: 0 0 25px 0;
+}
+
+fieldset.inner-fieldset {
+    float: right;
+    font-size: 1.6rem;
+    padding: 0;
+    width: 60%;
+}
+
+fieldset.inner-fieldset ul {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+fieldset.inner-fieldset li {
+    display: inline-block;
+    list-style-type: none;
+    width: 200px;
+}
+
+input[type="radio"] {
+    margin: 0 15px;
+    height: 20px;
+    width: 20px;
+}
+
+input[type="text"], textarea {
+    border: 1px solid #000000;
+    font-size: 1.4rem;
+    float: right;
+    width: 55.98555%;
+     padding: 15px;
+    margin: 0 0 0 15px;
+
+
+}
+input[type="text"]:focus, textarea:focus {
+
+    border: 1px solid #0ea6df;
+
+}
+
+input[type="submit"] {
+    font-size: 1.4rem;
+    text-align: center;
+    color: #000;
+    float: right;
+    min-width: 221px;
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin: 25px 0 0 0;
+    cursor: pointer;
+
+}
+
+input[type="submit"]:hover {
+    background-color: #f1f3f1;
+
+}
+
+@media screen and (max-width: 565px) {
+    legend, label {
+        width: 100%;
+        margin: 0 0 25px;
+    }
+    fieldset.inner-fieldset {
+        float: left;
+    }
+
+    input[type="text"], textarea {
+        width: 93%;
+        float: none;
+        margin: 0;
+     }
+}

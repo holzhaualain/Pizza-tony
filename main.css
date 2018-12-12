@@ -1,3 +1,4 @@
+@import url("contact.css"); /* Using a url */
 /*
       resets  /////////////////////////////////////////////////////////////////////////////////////////////////////////
    */
@@ -7,12 +8,9 @@
     padding: 0;
     border: none;
     outline: none;
-}
-
-*  {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 .hover {
@@ -171,6 +169,7 @@ footer {
     .col-4 {
         width: 100%;
     }
+
     .banner {
         margin: 0;
         padding: 0;
@@ -383,10 +382,24 @@ nav.mobile-nav {
 ==========================================================================
 */
 
+.hidden {
+    display: none;
+
+}
+
 .hidden-sm {
     display: none;
 }
 
+.show {
+    display: block;
+}
+
 .align-bottom {
     align-items: baseline;
+}
+
+.error {
+    color: #800000;
+    float: right;
 }

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta http-equiv="expires" content="0" />
+    <meta name="language" content="de" />
+    <meta name="robots" content="index, follow" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="author" content="" />
+    <meta name="publisher" content="" />
+    <meta name="copyright" content="" />
+    <meta name="distribution" content="Global" />
+    <meta name="rating" content="General" />
+    <meta name="audience" content="all" />
+
+    <meta http-equiv="cleartype" content="on">
+    <meta name="MobileOptimized" content="375">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta content="#800000" name="theme-color">
+    <meta content="#800000" name="msapplication-TileColor">
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+    <title>Welcome to Tony's Pizza Factory</title>
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="main.css">
+</head>
+<body>
+<header>
+    <div class="bg-main-nav">
+        <div class="row multi-col align-bottom main-nav">
+            <h2 class="tonys-logo">Tony's Pizza Factory</h2>
+            <nav>
+                <ul>
+                    <li><a title="pizza" href="#">Pizza</a></li>
+                    <li><a title="salat" href="#">Salat</a></li>
+                    <li><a title="soft drinks" href="#">Soft drinks</a></li>
+                    <li><a title="feedback" href="#">Feedback</a></li>
+                </ul>
+
+                <div class="hamburger" href="javascript:void(0);"
+                     onclick="mobileNav()">
+                    <div class="hamburge-line1"></div>
+                    <div class="hamburge-line2"></div>
+                    <div class="hamburge-line3"></div>
+                </div>
+            </nav>
+        </div><!-- .row -->
+    </div><!-- .bg-main-nav -->
+
+</header>
+
+<main>
+
+    <div class="row">
+        <h1>Tell us what you think</h1>
+
+        <form id="form-note-edit" class="contact-form" action="#"
+              method="post" name="contact-form"  formenctype="multipart/form-data">
+
+            <fieldset class="outer-fieldset">
+                <legend>How do you like our pizzas?</legend>
+                    <fieldset class="inner-fieldset">
+                       <ul>
+                        <li><input type="radio" name="like" value="awesome">Awesome</li>
+                        <li><input type="radio" name="like" value="good">Good</li>
+                        <li><input type="radio" name="like" value="okay">Okay</li>
+                       </ul>
+                    </fieldset>
+            </fieldset>
+
+            <fieldset class="outer-fieldset">
+                <legend>What do you think about our pizzas?</legend>
+                <fieldset class="inner-fieldset">
+                    <ul>
+                        <li><input type="radio" name="think" value="awesome">Fair</li>
+                        <li><input type="radio" name="think" value="good">Fair</li>
+                        <li><input type="radio" name="think" value="okay">Expensive</li>
+                    </ul>
+                </fieldset>
+            </fieldset>
+
+            <fieldset class="outer-fieldset">
+                <label for="yourname">Your name</label>
+                <input id="yourname" type="text" onkeyup="onInput(event)" required>
+                <p class="hidden error yname">This field ist mandatory!</p>
+
+            </fieldset>
+
+            <fieldset class="outer-fieldset">
+                <label for="email">Your e-mail</label>
+                <input id="email" type="text" onkeyup="onInput(event)" required>
+                <p class="hidden error yemail">This field ist mandatory!</p>
+                <p class="hidden error noemail">This is not a valid email adress!</p>
+
+            </fieldset>
+
+            <fieldset class="outer-fieldset">
+                <label for="message">Your e-mail</label>
+                <textarea rows="10" id="message" type="text" onkeyup="onInput(event)" required></textarea>
+                <p class="hidden error ymessage">Please leave a message.</p>
+            </fieldset>
+            <fieldset class="outer-fieldset">
+                  <input type="submit" class="submit" onclick="checkForm()" value="Submit" name="submit">
+            </fieldset>
+        </form>
+
+    </div><!-- .row -->
+
+
+
+</main>
+
+<footer>
+    <div class="row multi-col">
+        <div class="multi-col-column col-3">
+            <p>
+                Hours:<br>Mon-Thu: 11 a.m. - 23 p.m.<br>Fri-Sat: 11 a.m. - 24 p.m.<br>Sunday closed
+            </p>
+        </div><!-- multi-col-column -->
+
+        <div class="multi-col-column col-3">
+            <p>
+                Address:<br>Tony's Pizza Fatory<br>2122 N Clark St.<br>Chicago, IL 60614, USA
+            </p>
+        </div><!-- multi-col-column -->
+
+        <div class="multi-col-column col-3">
+            <p> The Pizzeria is one place I have been wanting to visit for a long time. the reason being heir Rustica pizza which absolutely blew me away. Jimmy</p>
+        </div><!-- multi-col-column -->
+    </div><!-- .row -->
+</footer>
+
+<script>
+    function mobileNav() {
+        document.getElementsByClassName('main-nav')[0].classList.toggle('expand');
+        document.getElementsByTagName('nav')[0].classList.toggle('mobile-nav');
+        document.getElementsByClassName('hamburger')[0].classList.toggle('change');
+    }
+</script>
+<script src="form.js" type="text/javascript"></script>
+</body>
+
+</html>
