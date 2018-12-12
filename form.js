@@ -30,7 +30,28 @@ function checkForm() {
         document.getElementsByClassName('ymessage')[0].classList.add("show","error");
 
     }
-    
+
+    /*
+    * form check as switch
+    *
+    switch (true) {
+
+        case (formValues[0].value ===""):
+            document.getElementsByClassName('yname')[0].classList.add("show","error");
+            break;
+
+        case (formValues[1].value ==="" || !formValues[1].value.match(emailPattern)):
+            document.getElementsByClassName('noemail')[0].classList.add("show","error");
+            break;
+
+        case(formValues[2].value ===""):
+            document.getElementsByClassName('ymessage')[0].classList.add("show","error");
+            break;
+        default:
+             break;
+    }
+    * */
+
 }
 
 
