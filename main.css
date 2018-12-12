@@ -8,9 +8,9 @@
     padding: 0;
     border: none;
     outline: none;
-    -webkit-box-sizing: inherit;
-    -moz-box-sizing: inherit;
-    box-sizing: inherit;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .hover {
@@ -68,6 +68,10 @@ a {
 
 h2.tonys-logo {
     font-size: 3rem;
+    color: #000000;
+}
+h2.tonys-logo a {
+    color: #000000;
 }
 /*
 ==========================================================================
@@ -123,16 +127,9 @@ footer {
 }
 
 .multi-col {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-flow: row wrap;
-    flex-flow: row wrap;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+     flex-flow: row wrap;
+     justify-content: space-between;
 }
 
 .multi-col li {
@@ -166,13 +163,16 @@ footer {
         margin: 5px 0;
     }
 
-    .col-4 {
+    .col-3, .col-4 {
         width: 100%;
     }
 
     .banner {
         margin: 0;
         padding: 0;
+    }
+    .multi-col li {
+        padding: 10px 0;
     }
 }
 /*
@@ -233,7 +233,7 @@ footer p {
 }
 
 footer .col-3 {
-    padding: 0 15px 0 0;
+    padding: 0 0 15px 0;
 }
 
 @media screen and (max-width: 500px) {
@@ -263,8 +263,8 @@ footer .col-3 {
 .main-nav {
     height: 20px;
 
-
 }
+
 nav ul li {
     list-style-type: none;
     float: left;

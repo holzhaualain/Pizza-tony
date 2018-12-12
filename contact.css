@@ -59,14 +59,19 @@ input[type="radio"] {
     width: 20px;
 }
 
+.input-wrap {
+    float: right;
+    width: 59%;
+}
+
+.input-wrap p {
+    margin: 5px 0 0 0;
+}
 input[type="text"], textarea {
     border: 1px solid #000000;
     font-size: 1.4rem;
-    float: right;
-    width: 55.98555%;
+    width: 100%;
      padding: 15px;
-    margin: 0 0 0 15px;
-
 
 }
 input[type="text"]:focus, textarea:focus {
@@ -103,8 +108,8 @@ input[type="submit"]:hover {
         float: left;
     }
 
-    input[type="text"], textarea {
-        width: 93%;
+    .input-wrap, textarea {
+        width: 100%;
         float: none;
         margin: 0;
      }

@@ -36,7 +36,7 @@
 <header>
     <div class="bg-main-nav">
         <div class="row multi-col align-bottom main-nav">
-            <h2 class="tonys-logo">Tony's Pizza Factory</h2>
+            <h2 class="tonys-logo"><a title="Tony's Pizza Factory" href="index.html">Tony's Pizza Factory</a></h2>
             <nav>
                 <ul>
                     <li><a title="pizza" href="#">Pizza</a></li>
@@ -89,22 +89,26 @@
 
             <fieldset class="outer-fieldset">
                 <label for="yourname">Your name</label>
-                <input id="yourname" type="text" onkeyup="onInput(event)" required>
-                <p class="hidden error yname">This field ist mandatory!</p>
-
+                <div class="input-wrap">
+                    <input id="yourname" type="text" onkeyup="onInput(event)" required>
+                    <p class="hidden error yname">This field ist mandatory!</p>
+                </div>
             </fieldset>
 
             <fieldset class="outer-fieldset">
                 <label for="email">Your e-mail</label>
-                <input id="email" type="text" onkeyup="onInput(event)" required>
-                <p class="hidden error noemail">This is not a valid email adress!</p>
-
+                <div class="input-wrap">
+                    <input id="email" type="text" onkeyup="onInput(event)" required>
+                    <p class="hidden error noemail">This is not a valid email adress!</p>
+                </div>
             </fieldset>
 
             <fieldset class="outer-fieldset">
                 <label for="message">Your e-mail</label>
-                <textarea rows="10" id="message" type="text" onkeyup="onInput(event)" required></textarea>
-                <p class="hidden error ymessage">Please leave a message.</p>
+                <div class="input-wrap">
+                    <textarea rows="10" id="message" type="text" onkeyup="onInput(event)" required></textarea>
+                    <p class="hidden error ymessage">Please leave a message.</p>
+                </div>
             </fieldset>
             <fieldset class="outer-fieldset">
                   <input type="submit" class="submit" onclick="checkForm()" value="Submit" name="submit">
