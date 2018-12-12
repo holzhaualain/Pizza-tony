@@ -22,19 +22,15 @@ function checkForm() {
         document.getElementsByClassName('yname')[0].classList.add("show","error");
 
     }
-    if(formValues[1].value =="") {
-        document.getElementsByClassName('yemail')[0].classList.add("show","error");
+    if(formValues[1].value =="" || !formValues[1].value.match(emailPattern)) {
+        document.getElementsByClassName('noemail')[0].classList.add("show","error");
 
     }
     if(formValues[2].value =="") {
         document.getElementsByClassName('ymessage')[0].classList.add("show","error");
 
     }
-
-    if(!formValues[1].value.match(emailPattern)) {
-        document.getElementsByClassName('noemail')[0].classList.add("show","error");
-
-    }
+    
 }
 
 
