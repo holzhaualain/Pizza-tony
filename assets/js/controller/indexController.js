@@ -5,8 +5,13 @@ const request = new requestData.dataLoader();
 const urls = new backendURL.backendURLs();
 
 (function(	) {
-
-    homeImages();
+    let currPage = document.body.className;
+     if (currPage === 'home') {
+            homeImages();
+    }
+    if (currPage === 'pizzas') {
+        pizzaContent();
+    }
 
     async function homeImages() {
          request.xhrRequest(urls.getURLs().pizzas).then(result => {
@@ -19,7 +24,6 @@ const urls = new backendURL.backendURLs();
              let bigImage = Handlebars.compile(bigImageTemplate);
 
              let imgTeaser = bigImage(pizzaData[0]);
-             console.log(pizzaData[0].imageUrl);
              document.getElementsByClassName('img-xl')[0].innerHTML += imgTeaser;
 
              pizzaData.forEach(function (index, i) {
@@ -31,4 +35,21 @@ const urls = new backendURL.backendURLs();
 
         });
     }
+
+    async function pizzaContent() {
+          request.xhrRequest(urls.getURLs().pizzas).then(result => {
+            let pizzaData = result;
+
+            let pizzasTemplate = document.getElementsByClassName("content")[0].innerHTML;
+            let pizzaOffers = Handlebars.compile(pizzasTemplate);
+
+            pizzaData.forEach(function (index, i) {
+                     let img = pizzaOffers(pizzaData[i]);
+                    document.getElementsByClassName('pizza-offers')[0].innerHTML += img;
+
+            });
+
+        });
+    }
+
 })();
