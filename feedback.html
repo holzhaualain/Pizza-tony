@@ -26,7 +26,7 @@
     <meta content="#800000" name="theme-color">
     <meta content="#800000" name="msapplication-TileColor">
     <meta name="MSSmartTagsPreventParsing" content="true" />
-    <title>Welcome to Tony's Pizza Factory</title>
+    <title>Feedback | Welcome to Tony's Pizza Factory</title>
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -39,10 +39,10 @@
             <h2 class="tonys-logo"><a title="Tony's Pizza Factory" href="index.html">Tony's Pizza Factory</a></h2>
             <nav>
                 <ul>
-                    <li><a title="pizza" href="#">Pizza</a></li>
-                    <li><a title="salat" href="#">Salat</a></li>
-                    <li><a title="soft drinks" href="#">Soft drinks</a></li>
-                    <li><a title="feedback" href="#">Feedback</a></li>
+                    <li><a title="pizza" href="pizzas.html">Pizza</a></li>
+                    <li><a title="salat" href="salad.html">Salad</a></li>
+                    <li><a title="softdrinks" href="softdrinks.html">Softdrinks</a></li>
+                    <li><a title="feedback" href="feedback.html">Feedback</a></li>
                 </ul>
 
                 <div class="hamburger" href="javascript:void(0);"
@@ -57,19 +57,19 @@
 
 </header>
 
-<main>
+<main role="main">
 
     <div class="row">
         <h1>Tell us what you think</h1>
 
-        <form id="form-note-edit" class="contact-form" action="#"
-              method="post" name="contact-form"  formenctype="multipart/form-data">
+        <form id="form-note-edit" class="feedback-form" action="#"
+              method="post" name="feedback-form"  formenctype="multipart/form-data">
 
             <fieldset class="outer-fieldset">
                 <legend>How do you like our pizzas?</legend>
                     <fieldset class="inner-fieldset">
                        <ul>
-                        <li><input type="radio" name="like" value="awesome">Awesome</li>
+                        <li><input type="radio" name="like" value="awesome" required>Awesome</li>
                         <li><input type="radio" name="like" value="good">Good</li>
                         <li><input type="radio" name="like" value="okay">Okay</li>
                        </ul>
@@ -80,11 +80,12 @@
                 <legend>What do you think about our pizzas?</legend>
                 <fieldset class="inner-fieldset">
                     <ul>
-                        <li><input type="radio" name="think" value="awesome">Fair</li>
-                        <li><input type="radio" name="think" value="good">Fair</li>
-                        <li><input type="radio" name="think" value="okay">Expensive</li>
+                        <li><input type="radio" name="think" value="good" required>Good</li>
+                        <li><input type="radio" name="think" value="fair">Fair</li>
+                        <li><input type="radio" name="think" value="expensive">Expensive</li>
                     </ul>
                 </fieldset>
+                <p class="hidden error ylike">Please tell us how yo like and think about our Pizzas.</p>
             </fieldset>
 
             <fieldset class="outer-fieldset">
@@ -92,7 +93,7 @@
                <div class="field-wrap">
                 <label for="yourname">Your name</label>
                     <div class="input-wrap">
-                        <input id="yourname" placeholder="Your name" type="text" onkeyup="onInput(event)" required>
+                        <input id="yourname" placeholder="Your name" name="yourname" type="text" onkeyup="onInput(event)" required>
                         <p class="hidden error yname">This field ist mandatory!</p>
                     </div>
                </div><!-- .field-wrap -->
@@ -100,7 +101,7 @@
                 <div class="field-wrap">
                  <label for="email">Your e-mail</label>
                      <div class="input-wrap">
-                    <input id="email" type="text" placeholder="Your e-mail" onkeyup="onInput(event)" required>
+                    <input id="email" type="text" placeholder="Your e-mail" name="email" onkeyup="onInput(event)" required>
                     <p class="hidden error noemail">This is not a valid email adress!</p>
                      </div>
                 </div><!-- .field-wrap -->
@@ -108,12 +109,12 @@
                 <div class="field-wrap">
                  <label for="message">Your message</label>
                 <div class="input-wrap">
-                    <textarea rows="10" id="message" type="text" placeholder="Your message" onkeyup="onInput(event)" required></textarea>
-                    <p class="hidden error ymessage">Please leave a message.</p>
+                    <textarea minlength="50" rows="10" id="message" type="text" placeholder="Your message" name="message" onkeyup="onInput(event)" required></textarea>
+                    <p class="hidden error ymessage">Please leave a message with minimal 50 characters.</p>
                 </div>
                 </div><!-- .field-wrap -->
             </fieldset>
-                <input type="submit" class="submit" onclick="checkForm()" value="Submit" name="submit">
+                <input type="submit" class="submit" value="Submit" name="submit" aria-label="submit" >
 
         </form>
 
@@ -141,14 +142,10 @@
     </div><!-- .row -->
 </footer>
 
-<script>
-    function mobileNav() {
-        document.getElementsByClassName('main-nav')[0].classList.toggle('expand');
-        document.getElementsByTagName('nav')[0].classList.toggle('mobile-nav');
-        document.getElementsByClassName('hamburger')[0].classList.toggle('change');
-    }
-</script>
-<script src="assets/js/form.js" type="text/javascript"></script>
+<script type="text/javascript" src="assets/js/utils/mobileNav.js"></script>
+<script type="text/javascript" src="assets/js/controller/feedbackFormController.js"></script>
+<script type="module" src="assets/js/controller/sendFormController.js"></script>
+
 </body>
 
 </html>

@@ -5,7 +5,7 @@
 //////////////////////////////////////////////////////////////////////////////
 */
 
-form.contact-form {
+form.feedback-form {
     margin: 25px 0 ;
     overflow: auto;
  }
@@ -63,7 +63,7 @@ input[type="radio"] {
 .field-wrap {
     width: 100%;
     position: relative;
-    height: 50px;
+    height: 65px;
     margin: 0 0 25px 0;
 }
 
@@ -92,11 +92,11 @@ input[type="text"]:focus, textarea:focus {
 input[type="submit"] {
     font-size: 1.4rem;
     text-align: center;
-    color: #000;
+    color: #ffffff;
     float: right;
     min-width: 221px;
     padding: 1rem;
-    background-color: #fff;
+    background-color: #800000;
     border: 1px solid #ccc;
     margin: 25px 0 0 0;
     cursor: pointer;
@@ -104,8 +104,13 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #f1f3f1;
+    color:#800000;
+    background-color: #ffffff;
 
+}
+input[type=submit]:disabled{
+    color:#000000;
+    background-color: #f1f3f1;
 }
 
 @media screen and (max-width: 565px) {

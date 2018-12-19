@@ -1,22 +1,30 @@
-import {default as requestData} from '../model/loadData.js';
+import {default as dataHandler} from '../model/dataHandler.js';
 import {default as backendURL} from '../utils/urls.js';
 
-const request = new requestData.dataLoader();
+const request = new dataHandler.dataLoader();
 const urls = new backendURL.backendURLs();
 
 (function(	) {
     let currPage = document.body.className;
-     if (currPage === 'home') {
-            homeImages();
-    }
-    if (currPage === 'pizzas') {
-        pizzaContent();
+
+    switch (currPage) {
+        case 'home':
+            homeImages()
+            break;
+        case 'pizzas':
+            pizzaContent()
+            break;
+        case 'softdrinks':
+            pizzaContent()
+            break;
+        default:
+            homeImages()
+        break;
     }
 
     async function homeImages() {
          request.xhrRequest(urls.getURLs().pizzas).then(result => {
-              let pizzaData = result;
-
+             let pizzaData = result;
              let teasersTemplate = document.getElementsByClassName("home-teasers")[0].innerHTML;
              let bigImageTemplate = document.getElementsByClassName("big-image")[0].innerHTML;
 
@@ -32,14 +40,20 @@ const urls = new backendURL.backendURLs();
                      document.getElementsByClassName('home-listing')[0].innerHTML += img;
                  }
                  });
+             document.getElementsByClassName('1')[0].innerHTML = "Pizzas";
+             document.getElementsByClassName('2')[0].innerHTML = "Salad";
+             document.getElementsByClassName('3')[0].innerHTML = "Softdrinks";
 
-        });
+             document.getElementsByClassName('1link')[0].setAttribute('href', "pizzas.html");
+             document.getElementsByClassName('2link')[0].setAttribute('href', "salads.html");
+             document.getElementsByClassName('3link')[0].setAttribute('href', "softdrinks.html");
+         });
     }
 
     async function pizzaContent() {
           request.xhrRequest(urls.getURLs().pizzas).then(result => {
             let pizzaData = result;
-
+            console.log(pizzaData);
             let pizzasTemplate = document.getElementsByClassName("content")[0].innerHTML;
             let pizzaOffers = Handlebars.compile(pizzasTemplate);
 

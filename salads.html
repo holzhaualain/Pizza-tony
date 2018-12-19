@@ -26,40 +26,50 @@
     <meta content="#800000" name="theme-color">
     <meta content="#800000" name="msapplication-TileColor">
     <meta name="MSSmartTagsPreventParsing" content="true" />
-    <title>Home | Welcome to Tony's Pizza Factory</title>
+    <title>Salads | Welcome to Tony's Pizza Factory</title>
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="assets/css/main.css">
     <script src="assets/js/libs/handlebars.runtime-v4.0.11.js"></script>
 
-    <script class="big-image" type="text/x-handlebars-template">
-        <img width="100%" height="auto" src="{{imageUrl}}" alt="{{name}}" title="{{name}}">
-
-    </script>
-    <script class="row home-teasers" type="text/x-handlebars-template">
-            <li class="col-3">
-                <a class="{{id}}link" href="">
-                    <h3 class="{{id}}"></h3>
-                    <img width="100%" height="auto" src="{{imageUrl}}" alt="{{name}}" title="{{name}}">
-                </a>
-            </li>
+    <script class="row content" type="text/x-handlebars-template">
+        <li class="col-4">
+            <a href="Pizza.html">
+                <img width="100%" height="auto" src="{{imageUrl}}"alt="{{name}}" title="{{name}}">
+            </a>
+            <div class="article-infos">
+                <p>
+                    <span class="article-name">{{name}}</span>
+                </p>
+                <p class="ingridients">
+                    {{ingredients}}
+                </p>
+                <p><select title="select salad" aria-label="select salad">
+                    <option value="garden">Garden</option>
+                    <option value="cesar">Cesar</option>
+                    <option value="hamandbackon">Ham & Bacon</option>
+                 </select>
+                    <span class="article-price">{{prize}}<i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                </p>
+            </div>
+        </li>
 
     </script><!-- .row -->
 
 </head>
-<body class="home">
+<body class="pizzas">
 <header>
     <div class="bg-main-nav">
-    <div class="row multi-col align-bottom main-nav">
-        <h2 class="tonys-logo"><a title="Tony's Pizza Factory" href="index.html">Tony's Pizza Factory</a></h2>
-         <nav>
-            <ul>
-                <li><a title="pizza" href="pizzas.html">Pizzas</a></li>
-                <li><a title="salat" href="salads.html">Salads</a></li>
-                <li><a title="softdrinks" href="softdrinks.html">Softdrinks</a></li>
-                <li><a title="feedback" href="feedback.html">Feedback</a></li>
-            </ul>
+        <div class="row multi-col align-bottom main-nav">
+            <h2 class="tonys-logo"><a title="Tony's Pizza Factory" href="index.html">Tony's Pizza Factory</a></h2>
+            <nav>
+                <ul>
+                    <li><a title="pizza" href="pizzas.html">Pizzas</a></li>
+                    <li><a title="salat" href="salads.html">Salads</a></li>
+                    <li><a title="softdrinks" href="softdrinks.html">Softdrinks</a></li>
+                    <li><a title="feedback" href="feedback.html">Feedback</a></li>
+                </ul>
 
                 <div class="hamburger" href="javascript:void(0);"
                      onclick="mobileNav()">
@@ -67,25 +77,24 @@
                     <div class="hamburge-line2"></div>
                     <div class="hamburge-line3"></div>
                 </div>
-        </nav>
-    </div><!-- .row -->
+            </nav>
+        </div><!-- .row -->
     </div><!-- .bg-main-nav -->
 
 </header>
 
 <main role="main">
     <div class="row banner">
-            <h1>Welcome to Tony's Pizza Factory</h1>
-                 <div class="img-xl">
-                </div>
+        <h1>Pizzas</h1>
     </div><!-- .row -->
-    <div class="row home-images">
-        <ul class="multi-col home-listing">
+
+
+    <div class="row">
+        <ul class="multi-col pizza-offers">
 
         </ul>
-     </div><!-- .row -->
 
-
+    </div><!-- .row -->
 
 </main>
 
@@ -109,13 +118,6 @@
     </div><!-- .row -->
 </footer>
 
-<script>
-    function mobileNav() {
-        document.getElementsByClassName('main-nav')[0].classList.toggle('expand');
-        document.getElementsByTagName('nav')[0].classList.toggle('mobile-nav');
-        document.getElementsByClassName('hamburger')[0].classList.toggle('change');
-    }
-</script>
 <script type="text/javascript" src="assets/js/utils/mobileNav.js"></script>
 <script type="module" src="assets/js/controller/dataController.js"></script>
 
