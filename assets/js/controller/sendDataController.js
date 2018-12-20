@@ -5,10 +5,11 @@ import {default as backendURL} from "../utils/urls.js";
 const sendFormData = new dataHandler.dataLoader();
 const urls = new backendURL.backendURLs();
 
-document.getElementsByClassName('submit')[0].addEventListener('click', function (e) {
-    e.preventDefault();
+if (document.body.contains(document.getElementsByClassName('feedback-form')[0])) {
+    document.getElementsByClassName('submit')[0].addEventListener('click', function (e) {
+        e.preventDefault();
 
-    let getFeedback = localStorage.getItem('feedback');
+        let getFeedback = localStorage.getItem('feedback');
         for (let i = 0; i < document.forms["feedback-form"]["like"].length; i++) {
             document.forms["feedback-form"]["like"][i].checked = false;
         }
@@ -16,11 +17,26 @@ document.getElementsByClassName('submit')[0].addEventListener('click', function 
             document.forms["feedback-form"]["think"][i].checked = false;
         }
 
-        document.forms["feedback-form"]["yourname"].value ="";
-        document.forms["feedback-form"]["email"].value ="";
-        document.forms["feedback-form"]["message"].value ="";
+        document.forms["feedback-form"]["yourname"].value = "";
+        document.forms["feedback-form"]["email"].value = "";
+        document.forms["feedback-form"]["message"].value = "";
 
         modal("Thank you", "We appreciate your feedback.");
+
+        /*
+            sendFormData.xhrSendFeedbackData(urls.getURLs().feedback, getFeedback).then(result => {
+                console.log(result.responseText);
+
+            });
+         */
+
+    });
+}
+
+document.getElementsByClassName('orderNow')[0].addEventListener('click', function (e) {
+    e.preventDefault();
+
+    modal("Thank you!", "Your order is on its way!");
 
     /*
         sendFormData.xhrSendFeedbackData(urls.getURLs().feedback, getFeedback).then(result => {
@@ -30,5 +46,3 @@ document.getElementsByClassName('submit')[0].addEventListener('click', function 
      */
 
 });
-
-

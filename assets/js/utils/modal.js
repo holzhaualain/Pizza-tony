@@ -6,5 +6,5 @@ function modal(title, text) {
     setTimeout(function () {
         document.getElementsByClassName('confirmBox')[0].classList.remove( 'slide');
 
-    },3000)
+    },4500)
 }

@@ -6,12 +6,12 @@
     left:-460px;
     top:50%;
     margin:-130px 0 0 -230px;
-    border: 1px solid rgba(33, 33, 33, 0.6);
-    -moz-box-shadow: 0 0 2px rgba(255, 255, 255, 0.6) inset;
-    -webkit-box-shadow: 0 0 2px rgba(255, 255, 255, 0.6) inset;
-    box-shadow: 0 0 2px rgba(255, 255, 255, 0.6) inset;
-    -webkit-transition: opacity 600ms, visibility 600ms;
-    transition: 0.5s;
+    border: 1px solid#800000;
+    -webkit-box-shadow: 0 10px 6px -6px #5a5a5a;
+    -moz-box-shadow: 0 10px 6px -6px #5a5a5a;
+    box-shadow: 0 10px 6px -6px #5a5a5a;
+
+     transition: 0.5s;
 }
 
 .confirmBox h2,

@@ -108,7 +108,15 @@
         </div><!-- multi-col-column -->
     </div><!-- .row -->
 </footer>
-
+<div class="bottom-basket-wrap hidden">
+    <p class="bottom-basket-info">
+        <a href="#" class="orderNow" role="button" title="Order now" aria-label="Order now">
+            <i class="fa fa-shopping-cart "></i>
+            Order now
+            <i class="fa fa-arrow-right"></i>
+        </a>
+    </p>
+</div>
 <script>
     function mobileNav() {
         document.getElementsByClassName('main-nav')[0].classList.toggle('expand');
@@ -116,8 +124,15 @@
         document.getElementsByClassName('hamburger')[0].classList.toggle('change');
     }
 </script>
+
+<script type="text/javascript" src="assets/js/utils/modal.js"></script>
 <script type="text/javascript" src="assets/js/utils/mobileNav.js"></script>
+<script type="text/javascript" src="assets/js/utils/init.js"></script>
+
 <script type="module" src="assets/js/controller/getDataController.js"></script>
+<script type="text/javascript" src="assets/js/controller/basketController.js"></script>
+<script type="module" src="assets/js/controller/sendDataController.js"></script>
+
 
 </body>
 

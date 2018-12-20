@@ -1,0 +1,29 @@
+/*
+==========================================================================
+  bottom shopping basket
+==========================================================================
+*/
+
+.bottom-basket-wrap {
+    font-size: 2rem;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    padding: 20px 0;
+    width: 100%;
+    border-top: 1px solid #000000;
+    background-color: #800000;
+    color: #fff;
+    z-index: 100;
+
+}
+
+@media screen and (max-width: 562px) {
+
+}
+.bottom-basket-info a {
+    color: #ffffff;
+}
+.bottom-basket-info a:hover {
+    color: #000000;
+}

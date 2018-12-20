@@ -1,5 +1,6 @@
 @import url("form-feedback.css");
 @import url("modal.css");
+@import url("bottom-basket.css");
 
 /*
       resets  /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -276,6 +277,8 @@ footer {
 .article-infos p {
     display: flex;
     justify-content: space-between;
+    flex-flow: row wrap;
+
 }
 
 .ingridients {
@@ -284,9 +287,19 @@ footer {
     min-height: 30px;
 }
 
-select {
+select.select {
     min-width: 150px;
     border: 1px solid #a9a9a9;
+}
+
+@media screen and (max-width: 545px) {
+
+
+    select.select {
+        min-width: 100%;
+        margin: 0 0 5px 0;
+     }
+
 }
 /*
 ==========================================================================
@@ -458,6 +471,7 @@ nav.mobile-nav {
         top: 5px;
     }
 }
+
 
 /*
 ==========================================================================
