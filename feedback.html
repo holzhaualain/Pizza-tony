@@ -33,14 +33,15 @@
     <link type="text/css" rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
+
 <header>
     <div class="bg-main-nav">
         <div class="row multi-col align-bottom main-nav">
             <h2 class="tonys-logo"><a title="Tony's Pizza Factory" href="index.html">Tony's Pizza Factory</a></h2>
             <nav>
                 <ul>
-                    <li><a title="pizza" href="pizzas.html">Pizza</a></li>
-                    <li><a title="salat" href="salad.html">Salad</a></li>
+                    <li><a title="pizza" href="pizzas.html">Pizzas</a></li>
+                    <li><a title="salat" href="salads.html">Salads</a></li>
                     <li><a title="softdrinks" href="softdrinks.html">Softdrinks</a></li>
                     <li><a title="feedback" href="feedback.html">Feedback</a></li>
                 </ul>
@@ -93,7 +94,8 @@
                <div class="field-wrap">
                 <label for="yourname">Your name</label>
                     <div class="input-wrap">
-                        <input id="yourname" placeholder="Your name" name="yourname" type="text" onkeyup="onInput(event)" required>
+                        <input id="yourname" placeholder="Your name" name="yourname" value=""
+                               type="text" onkeyup="onInput()" required>
                         <p class="hidden error yname">This field ist mandatory!</p>
                     </div>
                </div><!-- .field-wrap -->
@@ -101,7 +103,8 @@
                 <div class="field-wrap">
                  <label for="email">Your e-mail</label>
                      <div class="input-wrap">
-                    <input id="email" type="text" placeholder="Your e-mail" name="email" onkeyup="onInput(event)" required>
+                    <input id="email" type="text" placeholder="Your e-mail" name="email"
+                           value="" onkeyup="onInput()" required>
                     <p class="hidden error noemail">This is not a valid email adress!</p>
                      </div>
                 </div><!-- .field-wrap -->
@@ -109,12 +112,13 @@
                 <div class="field-wrap">
                  <label for="message">Your message</label>
                 <div class="input-wrap">
-                    <textarea minlength="50" rows="10" id="message" type="text" placeholder="Your message" name="message" onkeyup="onInput(event)" required></textarea>
+                    <textarea minlength="50" rows="10" id="message" type="text"
+                              placeholder="Your message" name="message" onkeyup="onInput()" required></textarea>
                     <p class="hidden error ymessage">Please leave a message with minimal 50 characters.</p>
                 </div>
                 </div><!-- .field-wrap -->
             </fieldset>
-                <input type="submit" class="submit" value="Submit" name="submit" aria-label="submit" >
+                <input type="submit" class="submit" value="Submit" name="submit" aria-label="submit" disabled="disabled" >
 
         </form>
 
@@ -141,10 +145,18 @@
         </div><!-- multi-col-column -->
     </div><!-- .row -->
 </footer>
+<!-- confirmBox modal -->
 
+<div class="confirmBox">
+        <h2 class="confirmBox-title"></h2>
+        <p class="confirmBox-text"></p>
+    </div
+
+<!-- end confirmBox modal -->
+<script type="text/javascript" src="assets/js/utils/modal.js"></script>
 <script type="text/javascript" src="assets/js/utils/mobileNav.js"></script>
 <script type="text/javascript" src="assets/js/controller/feedbackFormController.js"></script>
-<script type="module" src="assets/js/controller/sendFormController.js"></script>
+<script type="module" src="assets/js/controller/sendDataController.js"></script>
 
 </body>
 

@@ -23,8 +23,7 @@ const urls = new backendURL.backendURLs();
     }
 
     async function homeImages() {
-         request.xhrRequest(urls.getURLs().pizzas).then(result => {
-             let pizzaData = result;
+         request.xhrRequestData(urls.getURLs().pizzas).then(result => {
              let teasersTemplate = document.getElementsByClassName("home-teasers")[0].innerHTML;
              let bigImageTemplate = document.getElementsByClassName("big-image")[0].innerHTML;
 
@@ -51,10 +50,11 @@ const urls = new backendURL.backendURLs();
     }
 
     async function pizzaContent() {
-          request.xhrRequest(urls.getURLs().pizzas).then(result => {
+          request.xhrRequestData(urls.getURLs().pizzas).then(result => {
             let pizzaData = result;
-            console.log(pizzaData);
-            let pizzasTemplate = document.getElementsByClassName("content")[0].innerHTML;
+              console.log(pizzaData);
+
+              let pizzasTemplate = document.getElementsByClassName("content")[0].innerHTML;
             let pizzaOffers = Handlebars.compile(pizzasTemplate);
 
             pizzaData.forEach(function (index, i) {
@@ -65,5 +65,6 @@ const urls = new backendURL.backendURLs();
 
         });
     }
+
 
 })();

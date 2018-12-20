@@ -94,47 +94,26 @@
         return inputValid;
     }
 
-    function onInput(e) {
+    function onInput() {
         let formValues = getFormParts();
         let checkRadios = validateRadios(formValues);
         let checkInputs = validateInputs(formValues);
         let formData = {};
+        document.getElementsByClassName("submit")[0].disabled = true;
+
+        formData = {
+            "like" :   formValues[0].value,
+            "think":   formValues[1].value,
+            "name":    formValues[2].value,
+            "email":   formValues[3].value,
+            "message": formValues[4].value
+        }
+
+        localStorage.setItem('feedback', JSON.stringify(formData));
 
         if (checkInputs && checkRadios === true) {
             document.getElementsByClassName("submit")[0].disabled = false;
-             formData = {
-                "like" :   formValues[0].value,
-                "think":   formValues[1].value,
-                "name":    formValues[2].value,
-                "email":   formValues[3].value,
-                "message": formValues[4].value
-            }
 
-            localStorage.setItem('feedback', JSON.stringify(formData));
 
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

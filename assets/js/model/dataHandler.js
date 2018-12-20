@@ -12,10 +12,9 @@ class dataLoader {
 
         this.token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.MQ.bYceSpllpyYQixgNzDt7dpCkEojdv3NKD-85XLXfdI4';
 
-
     }
 
-    async xhrRequest(url) {
+    async xhrRequestData(url) {
         const xhr = new XMLHttpRequest();
 
         // Setup our HTTP request
@@ -28,11 +27,9 @@ class dataLoader {
 
             xhr.onreadystatechange = function () {
 
-            // Only run if the request is complete
-                if (xhr.readyState !== 4) return;
+                 if (xhr.readyState !== 4) return;
 
-                // Process the response
-                if (xhr.status >= 200 && xhr.status < 300) {
+                 if (xhr.status >= 200 && xhr.status < 300) {
                     // If successful
                     resolve(JSON.parse(xhr.responseText));
                 } else {
@@ -47,6 +44,37 @@ class dataLoader {
 
         });
      }
+
+    async xhrSendFeedbackData(url, feedback) {
+        const xhr = new XMLHttpRequest();
+
+        // Setup our HTTP request
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader('Content-Type', 'application/JSON');
+        xhr.setRequestHeader("Authorization", this.token);
+        xhr.send(feedback);
+
+        return new Promise(function (resolve, reject) {
+
+            xhr.onreadystatechange = function () {
+
+                if (xhr.readyState !== 4) return;
+
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    // If successful
+                    resolve(xhr.responseText);
+                } else {
+                    // If failed
+                    reject({
+                        status: xhr.status,
+                        statusText: xhr.statusText
+                    });
+                }
+
+            }
+
+        });
+    }
 
 }
 

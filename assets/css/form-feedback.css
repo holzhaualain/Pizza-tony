@@ -116,7 +116,7 @@ input[type=submit]:disabled{
 @media screen and (max-width: 565px) {
     legend, label {
         width: 100%;
-        margin: 0 0 25px;
+        margin: 15px 0 5px 0;
     }
     fieldset.inner-fieldset {
         float: left;
@@ -124,7 +124,6 @@ input[type=submit]:disabled{
 
     .input-wrap, textarea {
         width: 100%;
-        float: none;
-        margin: 0;
+         margin: 0;
      }
 }

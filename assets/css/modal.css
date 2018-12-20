@@ -1,0 +1,55 @@
+
+.confirmBox{
+    background-color: #fff;;
+    width:460px;
+    position: fixed;
+    left:-460px;
+    top:50%;
+    margin:-130px 0 0 -230px;
+    border: 1px solid rgba(33, 33, 33, 0.6);
+    -moz-box-shadow: 0 0 2px rgba(255, 255, 255, 0.6) inset;
+    -webkit-box-shadow: 0 0 2px rgba(255, 255, 255, 0.6) inset;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.6) inset;
+    -webkit-transition: opacity 600ms, visibility 600ms;
+    transition: 0.5s;
+}
+
+.confirmBox h2,
+.confirmBox p{
+    background-color: #800000;
+    padding: 18px 25px;
+    margin: 0;
+
+}
+
+.confirmBox h2{
+     letter-spacing:1px;
+    font-size: 26px;
+    font-weight: 200;
+    color:#fff;;
+}
+
+.confirmBox p{
+    background:none;
+    font-size:14px;
+    line-height:1.4;
+
+}
+.slide {
+    transition: 0.5s;
+    left: 50%
+}
+
+@media only screen and (max-width: 490px) {
+
+    .confirmBox{
+        margin: -130px auto 0px;
+         width: 90%;
+
+    }
+    .slide {
+         left: 5%
+    }
+
+}
+
