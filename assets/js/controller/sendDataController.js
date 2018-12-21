@@ -33,16 +33,24 @@ if (document.body.contains(document.getElementsByClassName('feedback-form')[0]))
     });
 }
 
-document.getElementsByClassName('orderNow')[0].addEventListener('click', function (e) {
-    e.preventDefault();
+if(document.body.contains(document.getElementsByClassName('order-now')[0])) {
+    document.getElementsByClassName('order-now')[0].addEventListener('click', function (e) {
+        e.preventDefault();
 
-    modal("Thank you!", "Your order is on its way!");
+        modal("Thank you!", "Your order is on its way!");
+        localStorage.removeItem('orders');
+        document.getElementsByClassName('order-list')[0].innerHTML = "<p>Your shopping basket is empty.</p>"
+        document.getElementsByClassName('bottom-basket-wrap')[0].classList.remove('show');
+        document.getElementsByClassName('order-now')[0].classList.add('hidden');
 
-    /*
-        sendFormData.xhrSendFeedbackData(urls.getURLs().feedback, getFeedback).then(result => {
-            console.log(result.responseText);
 
-        });
-     */
+        /*
+            sendFormData.xhrSendFeedbackData(urls.getURLs().feedback, getFeedback).then(result => {
+                console.log(result.responseText);
 
-});
+            });
+    */
+
+    });
+
+}

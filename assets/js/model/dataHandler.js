@@ -66,7 +66,7 @@ class dataLoader {
                 } else {
                     // If failed
                     reject({
-                        status: xhr.status,
+                     status: xhr.status,
                         statusText: xhr.statusText
                     });
                 }
