@@ -2,13 +2,16 @@
 function storeArticle(e) {
         let articleId = e.target.getAttribute('data-id');
         let article = e.target.getAttribute('data-name');
+        let articlePrize = e.target.getAttribute('data-prize');
+
         let articleAmount = e.target.parentElement.previousSibling.previousSibling.value;
         let orders =   localStorage.getItem('orders');
 
         let newOrder = {
             'id':      articleId,
             'article': article,
-            'amount':  articleAmount
+            'amount':  articleAmount,
+            'prize': articlePrize
         }
 
          orders = orders ? JSON.parse(orders) : {};

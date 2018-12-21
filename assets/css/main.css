@@ -310,8 +310,24 @@ select.select {
    checkout
 ==========================================================================
 */
-.order-list {
 
+
+table.basket-items {
+    font-size: 1rem;
+    text-align: left;
+}
+
+table.basket-items th, table.basket-items td {
+    padding: 3px;
+}
+
+table.basket-items th {
+    width: 120px;
+}
+
+table.basket-items tfoot td {
+    border-top: 1px solid #000000;
+    font-weight: 700;
 }
 
 /*
@@ -535,4 +551,8 @@ a.btn:hover {
 .error {
     color: #800000;
     float: right;
+}
+
+.right {
+    text-align: right;
 }

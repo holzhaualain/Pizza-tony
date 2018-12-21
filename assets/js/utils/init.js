@@ -2,13 +2,15 @@
 window.addEventListener('load', function() {
     const storedOrders= localStorage.getItem('orders');
 
-    if(storedOrders){
+    if(localStorage.getItem('orders')){
         document.getElementsByClassName('bottom-basket-wrap')[0].classList.add('show');
     }
 
-    if(!storedOrders && document.body.contains(document.getElementsByClassName('order-list')[0])) {
+    if(!storedOrders && document.body.contains(document.getElementsByClassName('basket-items')[0])) {
+        document.getElementsByClassName('basket-items')[0].classList.add('hidden');
         document.getElementsByClassName('order-now')[0].classList.add('hidden');
-        document.getElementsByClassName('order-list')[0].innerHTML = "<p>Your shopping basket is empty.</p>"
+
+        document.getElementsByClassName('basket-empty')[0].classList.add('show');
 
     }
 

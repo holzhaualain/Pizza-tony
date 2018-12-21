@@ -34,7 +34,13 @@
     <script src="assets/js/libs/handlebars.runtime-v4.0.11.js"></script>
 
     <script class="row orders " type="text/x-handlebars-template">
-        <p>{{amount}} {{article}}</p>
+
+            <tr>
+                <td>{{amount}}x </td>
+                <td>{{article}}</td>
+                <td class="prize right">{{multiply prize amount}}</td>
+            </tr>
+
 
     </script><!-- .row -->
 </head>
@@ -69,9 +75,23 @@
     <div class="row">
         <h1>Checkout</h1>
         <h2>I like to order the following articles:</h2>
-            <div class="order-list">
-            </div>
+        <p class="hidden basket-empty">Your shopping basket is empty.</p>
+        <table class="basket-items">
+            <thead>
+            <th>Amount</th>
+            <th>Article</th>
+            <th class="right">Prize</th>
+            </thead>
+            <tbody class="basket-table-body">
 
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="2">Total Amount</td>
+                <td class="total-amount right"></td>
+            </tr>
+            </tfoot>
+        </table>
     </div><!-- .row -->
 <div class="row">
     <a class="btn order-now" role="button" href="#">
@@ -120,6 +140,7 @@
 <script type="text/javascript" src="assets/js/utils/modal.js"></script>
 <script type="text/javascript" src="assets/js/utils/mobileNav.js"></script>
 <script type="text/javascript" src="assets/js/utils/init.js"></script>
+<script type="text/javascript" src="assets/js/utils/handlebars-helpers.js"></script>
 
 <script type="module" src="assets/js/controller/checkoutController.js"></script>
 <script type="module" src="assets/js/controller/sendDataController.js"></script>

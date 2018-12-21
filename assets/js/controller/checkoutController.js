@@ -1,7 +1,12 @@
 
 
 (function () {
-    loadOrders()
+
+    if (localStorage.getItem('orders')) {
+
+        loadOrders()
+    }
+
     function loadOrders() {
         let myOrders = localStorage.getItem('orders');
          myOrders = JSON.parse(myOrders);
@@ -12,15 +17,19 @@
 
         Object.values(myOrders).forEach(value => {
             let data = orders(value);
-            document.getElementsByClassName('order-list')[0].innerHTML += data;
+            document.getElementsByClassName('basket-table-body')[0].innerHTML += data;
 
         });
 
+        const articlePrize = document.querySelectorAll(".prize");
+        let counter = 0;
 
-         for (const key in myOrders){
-            console.log(myOrders[key]);
-        }
+        articlePrize.forEach(a => {
+            let temp = a.innerHTML.replace('$','');
+            counter += parseInt(temp);
+        });
 
+        document.getElementsByClassName('total-amount')[0].innerHTML = counter +"$";
     }
 
 

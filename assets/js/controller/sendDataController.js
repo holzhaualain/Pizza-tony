@@ -39,7 +39,7 @@ if(document.body.contains(document.getElementsByClassName('order-now')[0])) {
 
         modal("Thank you!", "Your order is on its way!");
         localStorage.removeItem('orders');
-        document.getElementsByClassName('order-list')[0].innerHTML = "<p>Your shopping basket is empty.</p>"
+        document.getElementsByClassName('basket-items')[0].innerHTML = "<p>Your shopping basket is empty.</p>"
         document.getElementsByClassName('bottom-basket-wrap')[0].classList.remove('show');
         document.getElementsByClassName('order-now')[0].classList.add('hidden');
 
