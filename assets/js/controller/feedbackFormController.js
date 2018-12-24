@@ -106,16 +106,15 @@
         let formValues = getFormParts();
         let checkRadios = validateRadios(formValues);
         let checkInputs = validateInputs(formValues);
-        let formData = {};
-        document.getElementsByClassName("submit")[0].disabled = true;
-
-        formData = {
+        let formData = {
             "like" :   formValues[0].value,
             "think":   formValues[1].value,
             "name":    formValues[2].value,
             "email":   formValues[3].value,
             "message": formValues[4].value
         }
+
+        document.getElementsByClassName("submit")[0].disabled = true;
 
         localStorage.setItem('feedback', JSON.stringify(formData));
 
