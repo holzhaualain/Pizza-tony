@@ -64,10 +64,18 @@
         let emailPattern = '[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$';
         let inputValid = false;
 
+           for (let u = 0; formValues.length > u; u++ ) {
+               if(formValues[u].value === '' && formValues[u].type !== undefined){
+                 formValues[u].nextElementSibling.classList.add('show');
 
+               } else if(formValues[u].type !== undefined) {
+                   formValues[u].nextElementSibling.classList.remove('show');
+                    inputValid = true;
+               }
+            };
+    /*
         if (formValues[2].value === "") {
-            console.log(formValues[2].value);
-             document.getElementsByClassName('yname')[0].classList.add("show");
+              document.getElementsByClassName('yname')[0].classList.add("show");
 
         } else {
               document.getElementsByClassName('yname')[0].classList.remove("show");
@@ -81,7 +89,7 @@
             document.getElementsByClassName('noemail')[0].classList.remove("show");
             inputValid = true;
         }
-
+*/
         if (formValues[4].value.length < 50 ) {
             document.getElementsByClassName('ymessage')[0].classList.add("show");
 
