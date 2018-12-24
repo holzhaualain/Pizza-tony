@@ -22,6 +22,7 @@ if (document.body.contains(document.getElementsByClassName('feedback-form')[0]))
         document.forms["feedback-form"]["message"].value = "";
 
         modal("Thank you", "We appreciate your feedback.");
+        document.getElementsByClassName("submit")[0].disabled = true;
 
         /*
             sendFormData.xhrSendFeedbackData(urls.getURLs().feedback, getFeedback).then(result => {
