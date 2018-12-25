@@ -41,7 +41,10 @@
                 <p class="ingridients">
                     {{ingredients}}
                 </p>
-                <p>
+                <p> <select class="select" title="select salads dressing" aria-label="select salads dressing">
+                    <option value="ceasar dressing">Ceasar dressing</option>
+                    <option value="french dressing">French dressing</option>
+                 </select>
                     <select class="select" title="select salads amount" aria-label="select salads amount">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -52,7 +55,7 @@
                                    data-id="{{id}}"
                                    data-name="{{name}}"
                                    data-prize="{{prize}}"
-                                   data-amount=""
+                                   data-type="salads"
                                    title="{{name}} zum Warenkorb hinzufügen."
                                    aria-label="{{name}} zum Warenkorb hinzufügen."
                                    onclick="storeArticle(event)">
@@ -64,7 +67,7 @@
     </script><!-- .row -->
 
 </head>
-<body class="pizzas">
+<body class="salads">
 <header>
     <div class="bg-main-nav">
         <div class="row multi-col align-bottom main-nav">
