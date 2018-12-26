@@ -41,19 +41,18 @@ if(document.body.contains(document.getElementsByClassName('order-now')[0])) {
     document.getElementsByClassName('order-now')[0].addEventListener('click', function (e) {
         e.preventDefault();
 
-        modal("Thank you!", "Your order is on its way!");
-        localStorage.removeItem('orders');
-        document.getElementsByClassName('basket-items')[0].innerHTML = "<p>Your shopping basket is empty.</p>"
-        document.getElementsByClassName('bottom-basket-wrap')[0].classList.remove('show');
-        document.getElementsByClassName('order-now')[0].classList.add('hidden');
+        let orders = localStorage.getItem('orders');
 
-
-        /*
-            sendFormData.xhrSendFeedbackData(urls.getURLs().feedback, getFeedback).then(result => {
+            sendFormData.xhrSendFeedbackData(urls.getURLs().orders, orders).then(result => {
                 console.log(result.responseText);
+                modal("Thank you!", "Your order is on its way!");
 
+                document.getElementsByClassName('basket-items')[0].innerHTML = "<p>Your shopping basket is empty.</p>"
+                document.getElementsByClassName('bottom-basket-wrap')[0].classList.remove('show');
+                document.getElementsByClassName('order-now')[0].classList.add('hidden');
+                localStorage.removeItem('orders');
             });
-    */
+
 
     });
 

@@ -75,7 +75,36 @@ class dataLoader {
 
         });
     }
+    async xhrSendOrderData(url) {
+        const xhr = new XMLHttpRequest();
 
+        // Setup our HTTP request
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader('Content-Type', 'application/JSON');
+        xhr.setRequestHeader("Authorization", this.token);
+        xhr.send(feedback);
+
+        return new Promise(function (resolve, reject) {
+
+            xhr.onreadystatechange = function () {
+
+                if (xhr.readyState !== 4) return;
+
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    // If successful
+                    resolve(xhr.responseText);
+                } else {
+                    // If failed
+                    reject({
+                        status: xhr.status,
+                        statusText: xhr.statusText
+                    });
+                }
+
+            }
+
+        });
+    }
 }
 
 
