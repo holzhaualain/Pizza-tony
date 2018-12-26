@@ -10,7 +10,7 @@ function storeArticle(e) {
         if(articleType ==="salads") {
         articleType =  e.target.parentElement.previousSibling.previousSibling.previousSibling.previousSibling.value;
         }
-       
+
 
         console.log(articleType);
 

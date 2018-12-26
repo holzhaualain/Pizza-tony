@@ -24,12 +24,15 @@ if (document.body.contains(document.getElementsByClassName('feedback-form')[0]))
         modal("Thank you", "We appreciate your feedback.");
         document.getElementsByClassName("submit")[0].disabled = true;
 
-        /*
+
             sendFormData.xhrSendFeedbackData(urls.getURLs().feedback, getFeedback).then(result => {
                 console.log(result.responseText);
 
             });
-         */
+
+            sendFormData.xhrRequestData(urls.getURLs().feedback).then(result => {
+                console.log(result.responseText);
+            })
 
     });
 }
