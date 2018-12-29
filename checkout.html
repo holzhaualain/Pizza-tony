@@ -35,11 +35,11 @@
 
     <script class="row orders " type="text/x-handlebars-template">
 
-            <tr>
-                <td>{{amount}}x </td>
-                <td>{{article}}</td>
-                <td class="prize right">{{multiply prize amount}}$</td>
-            </tr>
+        <tr>
+            <td>{{amount}}x </td>
+            <td>{{name}}</td>
+            <td class="prize right">{{multiply prize amount}}$</td>
+        </tr>
 
 
     </script><!-- .row -->
@@ -48,7 +48,7 @@
 
 <header>
     <div class="bg-main-nav">
-        <div class="row multi-col align-bottom main-nav">
+        <div class="row multi-col main-nav">
             <h2 class="tonys-logo"><a title="Tony's Pizza Factory" href="index.html">Tony's Pizza Factory</a></h2>
             <nav>
                 <ul>
@@ -93,12 +93,12 @@
             </tfoot>
         </table>
     </div><!-- .row -->
-<div class="row">
-    <a class="btn order-now" role="button" href="#">
-        Order now
-        <i class="fa fa-arrow-right"></i>
-    </a>
-</div>
+    <div class="row">
+        <a class="btn order-now" role="button" href="#">
+            Order now
+            <i class="fa fa-arrow-right"></i>
+        </a>
+    </div>
 </main>
 
 <footer>
@@ -110,14 +110,16 @@
         </div><!-- multi-col-column -->
 
         <div class="multi-col-column col-3">
+            <p> The Pizzeria is one place I have been wanting to visit for a long time. the reason being heir Rustica pizza which absolutely blew me away. Jimmy</p>
+        </div>
+
+        <div class="multi-col-column col-3">
             <p>
                 Address:<br>Tony's Pizza Fatory<br>2122 N Clark St.<br>Chicago, IL 60614, USA
             </p>
         </div><!-- multi-col-column -->
 
-        <div class="multi-col-column col-3">
-            <p> The Pizzeria is one place I have been wanting to visit for a long time. the reason being heir Rustica pizza which absolutely blew me away. Jimmy</p>
-        </div><!-- multi-col-column -->
+        <!-- multi-col-column -->
     </div><!-- .row -->
 </footer>
 <!-- confirmBox modal -->
@@ -126,12 +128,12 @@
     <h2 class="confirmBox-title"></h2>
     <p class="confirmBox-text"></p>
 </div>
-        <!-- end confirmBox modal -->
+<!-- end confirmBox modal -->
 
 <div class="bottom-basket-wrap hidden">
     <p class="bottom-basket-info">
         <a href="checkout.html" role="button" title="Order now" aria-label="Order now">
-             Got to checkout
+            Got to checkout
             <i class="fa fa-arrow-right"></i>
         </a>
     </p>

@@ -37,29 +37,21 @@
         <img width="100%" height="auto" src="{{imageUrl}}" alt="{{name}}" title="{{name}}">
 
     </script>
-    <script class="row home-teasers" type="text/x-handlebars-template">
-            <li class="col-3">
-                <a class="{{id}}link" href="">
-                    <h3 class="{{id}}"></h3>
-                    <img width="100%" height="auto" src="{{imageUrl}}" alt="{{name}}" title="{{name}}">
-                </a>
-            </li>
 
-    </script><!-- .row -->
 
 </head>
 <body class="home">
 <header>
     <div class="bg-main-nav">
-    <div class="row multi-col align-bottom main-nav">
-        <h2 class="tonys-logo"><a title="Tony's Pizza Factory" href="index.html">Tony's Pizza Factory</a></h2>
-         <nav>
-            <ul>
-                <li><a title="pizza" href="pizzas.html">Pizzas</a></li>
-                <li><a title="salat" href="salads.html">Salads</a></li>
-                <li><a title="softdrinks" href="softdrinks.html">Softdrinks</a></li>
-                <li><a title="feedback" href="feedback.html">Feedback</a></li>
-            </ul>
+        <div class="row multi-col main-nav">
+            <h2 class="tonys-logo"><a title="Tony's Pizza Factory" href="index.html">Tony's Pizza Factory</a></h2>
+            <nav>
+                <ul>
+                    <li><a title="pizza" href="pizzas.html">Pizzas</a></li>
+                    <li><a title="salat" href="salads.html">Salads</a></li>
+                    <li><a title="softdrinks" href="softdrinks.html">Softdrinks</a></li>
+                    <li><a title="feedback" href="feedback.html">Feedback</a></li>
+                </ul>
 
                 <div class="hamburger" href="javascript:void(0);"
                      onclick="mobileNav()">
@@ -67,23 +59,42 @@
                     <div class="hamburge-line2"></div>
                     <div class="hamburge-line3"></div>
                 </div>
-        </nav>
-    </div><!-- .row -->
+            </nav>
+        </div><!-- .row -->
     </div><!-- .bg-main-nav -->
 
 </header>
 
 <main role="main">
     <div class="row banner">
-            <h1>Welcome to Tony's Pizza Factory</h1>
-                 <div class="img-xl">
-                </div>
+        <h1>Welcome to Tony's Pizza Factory</h1>
+        <div class="img-xl">
+        </div>
     </div><!-- .row -->
     <div class="row home-images">
         <ul class="multi-col home-listing">
+            <li class="col-3">
+                <a href="pizzas.html">
+                    <h3>Pizzas</h3>
+                    <img width="100%" height="auto" src="assets/img/home_pizza.jpg" alt="Go to Pizzas" title="Go to Pizzas">
+                </a>
+            </li>
 
+            <li class="col-3">
+                <a href="salads.html">
+                    <h3>Salads</h3>
+                    <img width="100%" height="auto" src="assets/img/home_salad.jpg" alt="Go to Salads" title="Go to Salads">
+                </a>
+            </li>
+
+            <li class="col-3">
+                <a href="softdrinks.html">
+                    <h3>Softdrinks</h3>
+                    <img width="100%" height="auto" src="assets/img/home_softdrink.jpg" alt="Go to Softdrinks" title="Go to Softdrinks">
+                </a>
+            </li>
         </ul>
-     </div><!-- .row -->
+    </div><!-- .row -->
 
 
 
@@ -96,16 +107,16 @@
                 Hours:<br>Mon-Thu: 11 a.m. - 23 p.m.<br>Fri-Sat: 11 a.m. - 24 p.m.<br>Sunday closed
             </p>
         </div><!-- multi-col-column -->
-
+        <div class="multi-col-column col-3">
+            <p> The Pizzeria is one place I have been wanting to visit for a long time. the reason being heir Rustica pizza which absolutely blew me away. Jimmy</p>
+        </div>
         <div class="multi-col-column col-3">
             <p>
                 Address:<br>Tony's Pizza Fatory<br>2122 N Clark St.<br>Chicago, IL 60614, USA
             </p>
         </div><!-- multi-col-column -->
 
-        <div class="multi-col-column col-3">
-            <p> The Pizzeria is one place I have been wanting to visit for a long time. the reason being heir Rustica pizza which absolutely blew me away. Jimmy</p>
-        </div><!-- multi-col-column -->
+ <!-- multi-col-column -->
     </div><!-- .row -->
 </footer>
 <div class="bottom-basket-wrap hidden">

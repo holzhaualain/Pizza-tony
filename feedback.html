@@ -31,12 +31,13 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="assets/css/main.css">
+
 </head>
-<body>
+<body class="feedback">
 
 <header>
     <div class="bg-main-nav">
-        <div class="row multi-col align-bottom main-nav">
+        <div class="row multi-col main-nav">
             <h2 class="tonys-logo"><a title="Tony's Pizza Factory" href="index.html">Tony's Pizza Factory</a></h2>
             <nav>
                 <ul>
@@ -60,68 +61,87 @@
 
 <main role="main">
 
-    <div class="row">
+
+     <div class="row">
+
         <h1>Tell us what you think</h1>
 
-        <form id="form-note-edit" class="feedback-form" action="#"
-              method="post" name="feedback-form"  formenctype="multipart/form-data">
 
+
+        <form id="form-note-edit" class="feedback-form" action="#"
+
+              method="post" name="feedback-form"  formenctype="multipart/form-data">
             <fieldset class="outer-fieldset">
                 <legend>How do you like our pizzas?</legend>
-                    <fieldset class="inner-fieldset">
-                       <ul>
-                        <li><input type="radio" name="like" value="awesome" required>Awesome</li>
-                        <li><input type="radio" name="like" value="good">Good</li>
-                        <li><input type="radio" name="like" value="okay">Okay</li>
-                       </ul>
-                    </fieldset>
-            </fieldset>
-
-            <fieldset class="outer-fieldset">
-                <legend>What do you think about our pizzas?</legend>
                 <fieldset class="inner-fieldset">
                     <ul>
-                        <li><input type="radio" name="think" value="good" required>Good</li>
-                        <li><input type="radio" name="think" value="fair">Fair</li>
-                        <li><input type="radio" name="think" value="expensive">Expensive</li>
+                        <li><input type="radio" name="pizzaRating" value="awesome" required>Awesome</li>
+                        <li><input type="radio" name="pizzaRating" value="good">Good</li>
+                        <li><input type="radio" name="pizzaRating" value="okay">Okay</li>
+                        <li><input type="radio" name="pizzaRating" value="poor">Poor</li>
+                    </ul>
+                </fieldset>
+            </fieldset>
+            <fieldset class="outer-fieldset">
+                <legend>What do you think about our prizes?</legend>
+                <fieldset class="inner-fieldset">
+                    <ul>
+                        <li><input type="radio" name="prizeRating" value="fair" required>Fair</li>
+                        <li><input type="radio" name="prizeRating" value="okay">Okay</li>
+                        <li><input type="radio" name="prizeRating" value="expensive">Expensive</li>
                     </ul>
                 </fieldset>
                 <p class="hidden error ylike">Please tell us how yo like and think about our Pizzas.</p>
             </fieldset>
-
             <fieldset class="outer-fieldset">
-
-               <div class="field-wrap">
-                <label for="yourname">Your name</label>
+                <div class="field-wrap">
+                    <label for="yourname">Your name</label>
                     <div class="input-wrap">
-                        <input id="yourname" placeholder="Your name" name="yourname" value=""
+                        <input id="yourname" placeholder="Your name" name="name" value=""
                                type="text" onkeyup="onInput()" required>
                         <p class="hidden error yname">This field ist mandatory!</p>
                     </div>
-               </div><!-- .field-wrap -->
 
-                <div class="field-wrap">
-                 <label for="email">Your e-mail</label>
-                     <div class="input-wrap">
-                    <input id="email" type="text" placeholder="Your e-mail" name="email"
-                           value="" onkeyup="onInput()" required>
-                    <p class="hidden error noemail">This is not a valid email adress!</p>
-                     </div>
                 </div><!-- .field-wrap -->
 
                 <div class="field-wrap">
-                 <label for="message">Your message</label>
-                <div class="input-wrap">
+                    <label for="email">Your e-mail</label>
+                    <div class="input-wrap">
+                        <input id="email" type="text" placeholder="Your email" name="email"
+                               value="" onkeyup="onInput()" required>
+                        <p class="hidden error noemail">This is not a valid email address!</p>
+                    </div>
+
+                </div><!-- .field-wrap -->
+                <div class="field-wrap">
+                    <label for="message">What can we do better?</label>
+                    <div class="input-wrap">
                     <textarea minlength="50" rows="10" id="message" type="text"
-                              placeholder="Your message" name="message" onkeyup="onInput()" required></textarea>
-                    <p class="hidden error ymessage">Please leave a message with minimal 50 characters.</p>
-                </div>
-                </div><!-- .field-wrap -->
-            </fieldset>
-                <input type="submit" class="submit" value="Submit" name="submit" aria-label="submit" disabled="disabled" >
+                              placeholder="Your message" name="feedback" onkeyup="onInput()" required></textarea>
+                        <p class="hidden error ymessage">Please leave a message with minimal 50 characters.</p>
+                    </div>
 
+                </div><!-- .field-wrap -->
+
+            </fieldset>
+
+            <input type="submit" class="submit" value="Submit" name="submit" aria-label="submit" disabled="disabled" >
         </form>
 
+         <div class="feedback-stats-wrap hidden">
+            <h2>How people like our pizzas</h2>
+             <p><span class="pizzaRatingAwesome"></span> people find our pizzas awesome.</p>
+             <p><span class="pizzaRatingGood"></span> people find our pizzas good.</p>
+             <p><span class="pizzaRatingOkay"></span> people find our pizzas okay.</p>
+             <p><span class="pizzaRatingPoor"></span> people find our pizzas poor.</p>
+             <br>
+             <h2>How people think about our prizes</h2>
+             <p><span class="prizeRatingCountFair"></span> people think our prizes are fair.</p>
+             <p><span class="prizeRatingCountOkay"></span> people think our prizes are okay.</p>
+             <p><span class="prizeRatingCountExp"></span> people think our prizes are expensive.</p>
+
+
+         </div><!-- .feedback-stats-wrap -->
     </div><!-- .row -->
 
 </main>
@@ -133,25 +153,25 @@
                 Hours:<br>Mon-Thu: 11 a.m. - 23 p.m.<br>Fri-Sat: 11 a.m. - 24 p.m.<br>Sunday closed
             </p>
         </div><!-- multi-col-column -->
-
+        <div class="multi-col-column col-3">
+            <p> The Pizzeria is one place I have been wanting to visit for a long time. the reason being heir Rustica pizza which absolutely blew me away. Jimmy</p>
+        </div>
         <div class="multi-col-column col-3">
             <p>
                 Address:<br>Tony's Pizza Fatory<br>2122 N Clark St.<br>Chicago, IL 60614, USA
             </p>
         </div><!-- multi-col-column -->
 
-        <div class="multi-col-column col-3">
-            <p> The Pizzeria is one place I have been wanting to visit for a long time. the reason being heir Rustica pizza which absolutely blew me away. Jimmy</p>
-        </div><!-- multi-col-column -->
+        <!-- multi-col-column -->
     </div><!-- .row -->
 </footer>
 <!-- confirmBox modal -->
 
 <div class="confirmBox">
-        <h2 class="confirmBox-title"></h2>
-        <p class="confirmBox-text"></p>
-    </div
-<!-- end confirmBox modal -->
+    <h2 class="confirmBox-title"></h2>
+    <p class="confirmBox-text"></p>
+</div>
+        <!-- end confirmBox modal -->
 
 <div class="bottom-basket-wrap hidden">
     <p class="bottom-basket-info">
@@ -168,6 +188,8 @@
 
 <script type="text/javascript" src="assets/js/controller/feedbackFormController.js"></script>
 <script type="module" src="assets/js/controller/sendDataController.js"></script>
+<script type="module" src="assets/js/controller/getDataController.js"></script>
+
 
 </body>
 

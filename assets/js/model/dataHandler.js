@@ -27,30 +27,31 @@ class dataLoader {
 
             xhr.onreadystatechange = function () {
 
-                 if (xhr.readyState !== 4) return;
+                if (xhr.readyState !== 4) return;
 
-                 if (xhr.status >= 200 && xhr.status < 300) {
+                if (xhr.status >= 200 && xhr.status < 300) {
                     // If successful
                     resolve(JSON.parse(xhr.responseText));
                 } else {
+                    modal("Cannot access data", "Please try again later. We apologize for the inconvenience");
+
                     // If failed
-                    reject({
-                        status: xhr.status,
-                        statusText: xhr.statusText
+                     reject({
+                         statusText: xhr.statusText
                     });
                 }
 
             }
 
         });
-     }
+    }
 
     async xhrSendFeedbackData(url, feedback) {
         const xhr = new XMLHttpRequest();
 
         // Setup our HTTP request
         xhr.open("POST", url, true);
-        xhr.setRequestHeader('Content-Type', 'application/JSON');
+        xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
         xhr.setRequestHeader("Authorization", this.token);
         xhr.send(feedback);
 
@@ -62,49 +63,20 @@ class dataLoader {
 
                 if (xhr.status >= 200 && xhr.status < 300) {
                     // If successful
-                    resolve(xhr.responseText);
+                    resolve("success");
                 } else {
                     // If failed
+                    modal("Sending failure", "Please try again later. We apologize for the inconvenience");
                     reject({
-                     status: xhr.status,
                         statusText: xhr.statusText
-                    });
+                     });
                 }
 
             }
 
         });
     }
-    async xhrSendOrderData(url) {
-        const xhr = new XMLHttpRequest();
 
-        // Setup our HTTP request
-        xhr.open("POST", url, true);
-        xhr.setRequestHeader('Content-Type', 'application/JSON');
-        xhr.setRequestHeader("Authorization", this.token);
-        xhr.send(feedback);
-
-        return new Promise(function (resolve, reject) {
-
-            xhr.onreadystatechange = function () {
-
-                if (xhr.readyState !== 4) return;
-
-                if (xhr.status >= 200 && xhr.status < 300) {
-                    // If successful
-                    resolve(xhr.responseText);
-                } else {
-                    // If failed
-                    reject({
-                        status: xhr.status,
-                        statusText: xhr.statusText
-                    });
-                }
-
-            }
-
-        });
-    }
 }
 
 

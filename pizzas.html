@@ -44,13 +44,13 @@
                 </p>
                 <p>
                     <select class="select" title="select pizza amount" aria-label="select pizza amount">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                   </select>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
                     <span class="article-price">{{prize}}
                                 <i class="fa fa-shopping-cart" role="button"
-                                   data-id="10{{id}}"
+                                   data-id="{{id}}"
                                    data-name="{{name}}"
                                    data-prize="{{prize}}"
                                    data-type="pizza"
@@ -68,7 +68,7 @@
 <body class="pizzas">
 <header>
     <div class="bg-main-nav">
-        <div class="row multi-col align-bottom main-nav">
+        <div class="row multi-col main-nav">
             <h2 class="tonys-logo"><a title="Tony's Pizza Factory" href="index.html">Tony's Pizza Factory</a></h2>
             <nav>
                 <ul>
@@ -114,14 +114,16 @@
         </div><!-- multi-col-column -->
 
         <div class="multi-col-column col-3">
+            <p> The Pizzeria is one place I have been wanting to visit for a long time. the reason being heir Rustica pizza which absolutely blew me away. Jimmy</p>
+        </div>
+
+        <div class="multi-col-column col-3">
             <p>
                 Address:<br>Tony's Pizza Fatory<br>2122 N Clark St.<br>Chicago, IL 60614, USA
             </p>
         </div><!-- multi-col-column -->
 
-        <div class="multi-col-column col-3">
-            <p> The Pizzeria is one place I have been wanting to visit for a long time. the reason being heir Rustica pizza which absolutely blew me away. Jimmy</p>
-        </div><!-- multi-col-column -->
+       <!-- multi-col-column -->
     </div><!-- .row -->
 </footer>
 <!-- confirmBox modal -->

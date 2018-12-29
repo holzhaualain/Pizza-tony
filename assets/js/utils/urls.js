@@ -21,4 +21,3 @@ class backendURLs {
 
 }
 export default {backendURLs};
-

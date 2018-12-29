@@ -38,21 +38,21 @@
             <img width="100%" height="auto" src="{{imageUrl}}" alt="{{name}}" title="{{name}}">
             <div class="article-infos">
                 <p><span class="article-name">{{name}}</span></p>
-                <p class="ingridients">
-                    {{ingredients}}
+                <p class="volume">
+                    {{volume}}
                 </p>
                 <p>
-                    <select class="select" title="select softdrinks amount" aria-label="select pizza amount">
+                    <select class="select" title="select softdrinks amount" aria-label="select softdrinks amount">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                     </select>
                     <span class="article-price">{{prize}}
                                 <i class="fa fa-shopping-cart" role="button"
-                                   data-id="30{{id}}"
+                                   data-id="{{id}}"
                                    data-name="{{name}}"
                                    data-prize="{{prize}}"
-                                   data-type="softdrinks"
+                                   data-type="softdrink"
                                    title="{{name}} zum Warenkorb hinzufügen."
                                    aria-label="{{name}} zum Warenkorb hinzufügen."
                                    onclick="storeArticle(event)">
@@ -67,7 +67,7 @@
 <body class="softdrinks">
 <header>
     <div class="bg-main-nav">
-        <div class="row multi-col align-bottom main-nav">
+        <div class="row multi-col main-nav">
             <h2 class="tonys-logo"><a title="Tony's Pizza Factory" href="index.html">Tony's Pizza Factory</a></h2>
             <nav>
                 <ul>
@@ -111,16 +111,16 @@
                 Hours:<br>Mon-Thu: 11 a.m. - 23 p.m.<br>Fri-Sat: 11 a.m. - 24 p.m.<br>Sunday closed
             </p>
         </div><!-- multi-col-column -->
-
+        <div class="multi-col-column col-3">
+            <p> The Pizzeria is one place I have been wanting to visit for a long time. the reason being heir Rustica pizza which absolutely blew me away. Jimmy</p>
+        </div>
         <div class="multi-col-column col-3">
             <p>
                 Address:<br>Tony's Pizza Fatory<br>2122 N Clark St.<br>Chicago, IL 60614, USA
             </p>
         </div><!-- multi-col-column -->
 
-        <div class="multi-col-column col-3">
-            <p> The Pizzeria is one place I have been wanting to visit for a long time. the reason being heir Rustica pizza which absolutely blew me away. Jimmy</p>
-        </div><!-- multi-col-column -->
+        <!-- multi-col-column -->
     </div><!-- .row -->
 </footer>
 <!-- confirmBox modal -->
